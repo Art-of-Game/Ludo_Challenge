@@ -413,12 +413,12 @@ public class StartMenu : MonoBehaviour
             if (Database.GetSpinAdDate(Register.userId) == "0" || current_date != saved_date)
             {
                 Database.SetSpinAdDate(Register.userId, current_date);
-                if (Advertisement.IsReady("rewardedVideo"))
+                /*if (Advertisement.IsReady("rewardedVideo"))
                 {
                     Advertisement.Show("rewardedVideo");
                     spin_canvas.enabled = true;
                     getOneMoreSpin = true;
-                }
+                }*/
             }
             else
             {
@@ -452,10 +452,10 @@ public class StartMenu : MonoBehaviour
             if (Database.GetAdDate(Register.userId) == "0" || current_date != saved_date)
             {
                 Database.SetAdDate(Register.userId, current_date);
-                if (Advertisement.IsReady("rewardedVideo"))
+                /*if (Advertisement.IsReady("rewardedVideo"))
                 {
                     Advertisement.Show("rewardedVideo", new ShowOptions() { resultCallback = HandleAdResult });
-                }
+                }*/
             }
             else
             {

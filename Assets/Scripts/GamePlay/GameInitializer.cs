@@ -1372,10 +1372,10 @@ public class GameInitializer : MonoBehaviour
 
         if (!StartMenu.playAsGuest)
         {
-            if (Advertisement.IsReady())
+            /*if (Advertisement.IsReady())
             {
                 Advertisement.Show();
-            }
+            }*/
         }
 
 

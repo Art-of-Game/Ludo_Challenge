@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using Facebook.Unity;
+//using Facebook.Unity;
 using UnityEngine.SceneManagement;
 using GameSparks.Api.Requests;
 using GameSparks.Core;
@@ -35,14 +35,14 @@ public class LoginWithFB : MonoBehaviour
     {
         Debug.Log("Connecting Facebook With GameSparks...");// first check if FB is ready, and then login //
                                                             // if it's not ready we just init FB and use the login method as the callback for the init method //
-        if (!FB.IsInitialized)
+        if (!true/*FB.IsInitialized*/)
         {
             Debug.Log("Initializing Facebook...");
-            FB.Init(ConnectGameSparksToGameSparks, null);
+            //FB.Init(ConnectGameSparksToGameSparks, null);
         }
         else
         {
-            FB.ActivateApp();
+            //FB.ActivateApp();
             ConnectGameSparksToGameSparks();
         }
     }
@@ -51,12 +51,12 @@ public class LoginWithFB : MonoBehaviour
     private void ConnectGameSparksToGameSparks()
     {
         loginWithFB_btn.interactable = false;
-        if (FB.IsInitialized)
+        if (true/*FB.IsInitialized*/)
         {
-            FB.ActivateApp();
+            //FB.ActivateApp();
             Debug.Log("Logging Into Facebook...");
             var perms = new List<string>() { "public_profile", "email", "user_friends" };
-            FB.LogInWithReadPermissions(perms, (result) =>
+            /*FB.LogInWithReadPermissions(perms, (result) =>
             {
                 if (FB.IsLoggedIn)
                 {
@@ -101,7 +101,7 @@ public class LoginWithFB : MonoBehaviour
                     FacebookLoggedIn = false;
                     loginWithFB_btn.interactable = true;
                 }
-            });// lastly call another method to login, and when logged in we have a callback
+            });*/// lastly call another method to login, and when logged in we have a callback
         }
         else
         {

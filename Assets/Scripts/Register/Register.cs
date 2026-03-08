@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using GameSparks.Api.Requests;
 using GameSparks.Core;
-using Facebook.Unity;
+//using Facebook.Unity;
 
 public class Register : MonoBehaviour
 {

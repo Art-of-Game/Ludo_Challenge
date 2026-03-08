@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using GameSparks.Api.Requests;
 using GameSparks.Core;
-using Facebook.Unity;
+//using Facebook.Unity;
 
 public class SplashScreen : MonoBehaviour {
     private void Start()
@@ -46,14 +46,14 @@ public class SplashScreen : MonoBehaviour {
             }
             else if (Database.GetLoginStatus() == GameConstants.LOGGED_IN_WITH_FB)
             {
-                if (!FB.IsInitialized)
+                if (!true/*FB.IsInitialized*/)
                 {
                     Debug.Log("Initializing Facebook...");
-                    FB.Init(ConnectGameSparksToGameSparks, null);
+                    //FB.Init(ConnectGameSparksToGameSparks, null);
                 }
                 else
                 {
-                    FB.ActivateApp();
+                    //FB.ActivateApp();
                     ConnectGameSparksToGameSparks();
                 }
             }
@@ -74,12 +74,12 @@ public class SplashScreen : MonoBehaviour {
 
     private void ConnectGameSparksToGameSparks()
     {
-        if (FB.IsInitialized)
+        if (true/*FB.IsInitialized*/)
         {
-            FB.ActivateApp();
+            //FB.ActivateApp();
             Debug.Log("Logging Into Facebook...");
             var perms = new List<string>() { "public_profile", "email", "user_friends" };
-            FB.LogInWithReadPermissions(perms, (result) =>
+            /*FB.LogInWithReadPermissions(perms, (result) =>
             {
                 if (FB.IsLoggedIn)
                 {
@@ -122,18 +122,18 @@ public class SplashScreen : MonoBehaviour {
                     LoginWithFB.FacebookLoggedIn = false;
                     SceneManager.LoadScene(GameConstants.REGISTER_SCENE);
                 }
-            });// lastly call another method to login, and when logged in we have a callback
+            });*/// lastly call another method to login, and when logged in we have a callback
         }
         else
         {
-            if (!FB.IsInitialized)
+            if (!true/*FB.IsInitialized*/)
             {
                 Debug.Log("Initializing Facebook...");
-                FB.Init(ConnectGameSparksToGameSparks, null);
+                //FB.Init(ConnectGameSparksToGameSparks, null);
             }
             else
             {
-                FB.ActivateApp();
+                //FB.ActivateApp();
                 ConnectGameSparksToGameSparks();
             }
         }
